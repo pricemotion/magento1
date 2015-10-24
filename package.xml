@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>A4s_Pricemotion</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <stability>stable</stability>
     <license>GNU GPL v3.0</license>
     <channel>community</channel>
@@ -164,7 +164,7 @@ You can also let the work be done for you. Just setup a pricerule and the prices
                 <name>Mage_Core_Modules</name>
                 <channel>community</channel>
                 <min>1.5.0</min>
-                <max>1.9.2</max>
+                <max>1.9.2.1</max>
             </package>
         </required>
     </dependencies>
