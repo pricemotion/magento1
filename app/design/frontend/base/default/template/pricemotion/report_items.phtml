@@ -1,0 +1,11 @@
+<?php foreach($this->getItems() as $item): ?>
+<tr>
+	<td><?php echo $item['id']; ?></td>
+	<td><?php echo $item['name']; ?></td>
+	<td><?php echo Mage::helper('pricemotion')->__($item['type']); ?></td>
+	<td><?php echo $item['price']; ?></td>
+	<td><?php echo $item['new_price']; ?></td>
+	<td><?php echo $item['min_price']; ?></td>
+	<td><?php echo (isset($item['error'])) ? $item['error'] : $item['status']; ?></td>
+</tr>
+<?php endforeach; ?>

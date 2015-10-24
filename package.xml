@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<package>
+    <name>A4s_Pricemotion</name>
+    <version>0.2.18</version>
+    <stability>stable</stability>
+    <license>GNU GPL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Pricemotion delivers the prices of Dutch competitors right in Magento. You do not have to through all those websites of your competitors anymore. </summary>
+    <description>Pricemotion delivers the prices of Dutch competitors right in Magento. You do not have to through all those websites of your competitors anymore. &#xD;
+&#xD;
+Just open up a product in Magento and look at the Pricemotion tab. All prices of your competitors are there including the highest, lowest, average and median price. You can make decisions right away. &#xD;
+&#xD;
+You can also let the work be done for you. Just setup a pricerule and the prices are updated automatically four times a day. To be sure nothing goes wrong we have margin check so that you can trust your selling prices are not below your acquiring price and you make money. For those who don't trust automatic systems we can send you an email about that and leave the prices for you to set.</description>
+    <notes>Bump maximum Magento and PHP versions.</notes>
+    <authors>
+        <author>
+            <name>Heimen</name>
+            <user>pricemotion</user>
+            <email>heimen@pricemotion.nl</email>
+        </author>
+    </authors>
+    <date>2015-07-07</date>
+    <time>11:00:00</time>
+    <contents>
+        <target name="magelocal">
+            <dir name="A4s">
+                <dir name="Pricemotion">
+                    <dir name="Block">
+                        <dir name="Adminhtml">
+                            <dir name="Catalog">
+                                <dir name="Product">
+                                    <dir name="Action">
+                                        <file name="Rules.php" hash="2ab2d7b2aec730e4180c214e4111c6d6"/>
+                                    </dir>
+                                    <file name="Grid.php" hash="efa1e9b5133e2f173bc478c29168fc80"/>
+                                    <file name="Pricerules.php" hash="cb8685c1f0de60337d52b86307f16dae"/>
+                                    <file name="Tab.php" hash="af00da1a6dff03d99390a48086572df4"/>
+                                </dir>
+                            </dir>
+                            <dir name="Form">
+                                <dir name="Element">
+                                    <file name="Errormsg.php" hash="67a6e14c48db851da3ce29dc636066ab"/>
+                                    <file name="Prices.php" hash="0a3b56aeee92427b954b3642b419b336"/>
+                                </dir>
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="Helper">
+                        <dir name="Catalog">
+                            <dir name="Product">
+                                <file name="Action.php" hash="8126e50cf75eb79d8e2c8d2f077b6e7f"/>
+                            </dir>
+                        </dir>
+                        <file name="Data.php" hash="848bf746991dadcb5fe7fe65bf60b3ee"/>
+                    </dir>
+                    <dir name="Model">
+                        <dir name="Mysql4">
+                            <dir name="Rules">
+                                <file name="Collection.php" hash="422047623e90aeeaf3056aa735e5cf51"/>
+                            </dir>
+                            <file name="Rules.php" hash="de43a9a3bf018ff3dc88289b400cd959"/>
+                        </dir>
+                        <file name="Observer.php" hash="0d97115621cb6f38ce4c12dfa49c8e75"/>
+                        <dir name="Resource">
+                            <dir name="Eav">
+                                <dir name="Mysql4">
+                                    <file name="Setup.php" hash="db37feaae0b61a2f1af2bf2f3bd0f620"/>
+                                </dir>
+                            </dir>
+                        </dir>
+                        <file name="Rules.php" hash="89cc7b2d19f18dca40bf53c3c35efcfd"/>
+                        <dir name="System">
+                            <dir name="Config">
+                                <dir name="Source">
+                                    <dir name="Product">
+                                        <file name="Attributes.php" hash="d2e820f8b5888e1394e34b640738f1d9"/>
+                                    </dir>
+                                </dir>
+                            </dir>
+                        </dir>
+                    </dir>
+                    <dir name="controllers">
+                        <dir name="Adminhtml">
+                            <file name="ActionController.php" hash="436f4b1f3f0f4c87313a5aaabf963f3a"/>
+                        </dir>
+                    </dir>
+                    <dir name="etc">
+                        <file name="config.xml" hash="1891b83833bfcafaba307906d099efa7"/>
+                        <file name="system.xml" hash="fdb0df916e543f61d61ec77b82563ca1"/>
+                    </dir>
+                    <dir name="sql">
+                        <dir name="pricemotion_setup">
+                            <file name="mysql4-install-0.1.0.php" hash="5d9857be43b775df5e801611aeede550"/>
+                            <file name="mysql4-upgrade-0.2.10-0.2.11.php" hash="8c89afb7b2c3f5ba56ac39c8d0b72e67"/>
+                            <file name="mysql4-upgrade-0.2.12-0.2.13.php" hash="579437094cfe6c059aa3c16a9d43bf3a"/>
+                            <file name="mysql4-upgrade-0.2.16-0.2.17.php" hash="d9ded804a2fb6f7e6d377ad6a1961a2c"/>
+                            <file name="mysql4-upgrade-0.2.8-0.2.9.php" hash="0d320ad04bd30316daa8b1994211af9a"/>
+                        </dir>
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+        <target name="magedesign">
+            <dir name="adminhtml">
+                <dir name="default">
+                    <dir name="default">
+                        <dir name="layout">
+                            <file name="pricemotion.xml" hash="b0b4f5f55155551c4523bfad0ac4dd28"/>
+                        </dir>
+                        <dir name="template">
+                            <dir name="pricemotion">
+                                <file name="mass_price_rules.phtml" hash="b1ca05a79f3a7e408445b4faa11e8a6b"/>
+                                <file name="price_rules.phtml" hash="57470cb06e722e7344a5e51e87c37d08"/>
+                            </dir>
+                        </dir>
+                    </dir>
+                </dir>
+            </dir>
+            <dir name="frontend">
+                <dir name="base">
+                    <dir name="default">
+                        <dir name="template">
+                            <dir name="pricemotion">
+                                <file name="report_items.phtml" hash="b4b4917387c60086aefc4f218071145a"/>
+                            </dir>
+                        </dir>
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+        <target name="mageetc">
+            <dir name="modules">
+                <file name="A4s_Pricemotion.xml" hash="8579f9f81887bdb95098fa360a783553"/>
+            </dir>
+        </target>
+        <target name="magelocale">
+            <dir name="en_US">
+                <file name="Pricemotion.csv" hash="0ab8bfb05c1e3f7bdd26b84596432ac5"/>
+                <dir name="template">
+                    <dir name="email">
+                        <file name="pricemotion.html" hash="b1910a27cd87ee07612ed4cb89deca3b"/>
+                    </dir>
+                </dir>
+            </dir>
+            <dir name="nl_NL">
+                <file name="Pricemotion.csv" hash="a10d700e52dcd67029383e83b6b1da6a"/>
+                <dir name="template">
+                    <dir name="email">
+                        <file name="pricemotion.html" hash="c658c320679e50d67eb7a24239dd1d4e"/>
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+    </contents>
+    <compatible/>
+    <dependencies>
+        <required>
+            <php>
+                <min>5.2.0</min>
+                <max>5.7.0</max>
+            </php>
+            <package>
+                <name>Mage_Core_Modules</name>
+                <channel>community</channel>
+                <min>1.5.0</min>
+                <max>1.9.2</max>
+            </package>
+        </required>
+    </dependencies>
+</package>

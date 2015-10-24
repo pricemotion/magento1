@@ -1,0 +1,54 @@
+<!--@subject Pricemotion cron rapport: {{var date}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var date":"Date of cron",
+"var rules_loaded":"Number of rules loaded",
+"var items":"Rules",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt"}
+@-->
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+
+<body style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;">
+<div style="background:#F6F6F6; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:30px;">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+    <td align="center" valign="top" style="padding:20px 0 20px 0">
+        <table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" width="100%" style="border:1px solid #E0E0E0;">
+            <!-- [ header starts here] -->
+            <tr>
+                <td valign="top"><a href="{{store url=""}}"><img src="{{var logo_url}}" alt="{{var logo_alt}}" style="margin-bottom:10px;" border="0"/></a></td>
+            </tr>
+            <!-- [ middle starts here] -->
+            <tr>
+                <td valign="top">
+                    <p style="font-size:12px; line-height:16px; margin:0;">
+                        PriceMotion E-mail Update
+                    </p>
+                    <p style="font-size:12px; line-height:16px; margin:0;">{{var rules_loaded}} regels geladen</p>
+                </td>
+            </tr>
+            <tr>
+				<td>
+					<table bgcolor="#FFFFFF" cellspacing="0" cellpadding="10" border="0" width="100%" style="border:1px solid #E0E0E0;">
+						<tr>
+						  <td><b>ID</b></td>
+						  <td><b>Productnaam</b></td>
+						  <td><b>Regel</b></td>
+						  <td><b>Oud</b></td>
+						  <td><b>Nieuw</b></td>
+						  <td><b>Margebewaking</b></td>
+						  <td><b>Status</b></td>
+						</tr>
+						{{block type='core/template' area='frontend' template='pricemotion/report_items.phtml' items=$items}}
+					</table>
+				</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+</div>
+</body>

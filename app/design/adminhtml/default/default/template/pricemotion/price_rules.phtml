@@ -1,0 +1,43 @@
+<?php
+/**
+ * PriceMotion tab template
+ */
+?>
+<?php
+    
+$rules = $this->getProductRules();
+    
+?>
+<div class="price-rule-box">
+    <input type="radio" name="pricemotion[price_rules]" id="pm_rules_disable" value="<?php echo A4s_Pricemotion_Model_Rules::RULE_DISABLED ?>" <?php if($rules->getStatus() == A4s_Pricemotion_Model_Rules::RULE_DISABLED): ?>checked="checked"<?php endif; ?> />
+    <label for="pm_rules_disable"><?php echo $this->__('Disable all price rules') ?></label>
+</div>
+<div class="price-rule-box">
+    <input type="radio" name="pricemotion[price_rules]" id="pm_lowest_price" value="<?php echo A4s_Pricemotion_Model_Rules::LOWEST_PRICE ?>" <?php if($rules->getStatus() == A4s_Pricemotion_Model_Rules::LOWEST_PRICE): ?>checked="checked"<?php endif; ?>/>
+    <label for="pm_lowest_price"><?php echo $this->__('Equal to lowest price') ?></label>
+</div>
+<div class="price-rule-box">
+    <input type="radio" name="pricemotion[price_rules]" id="pm_below_average_enabled" value="<?php echo A4s_Pricemotion_Model_Rules::RULE_BELOW_AVERAGE ?>" <?php if($rules->getStatus() == A4s_Pricemotion_Model_Rules::RULE_BELOW_AVERAGE): ?>checked="checked"<?php endif; ?>/>
+    <label for="pm_below_average_enabled"><?php echo $this->__('The price is always') ?></label>
+    <input type="text" value="<?php echo $rules->getBelowAveragePercent() ?>" class="input-text" name="pricemotion[below_average]" id="pm_below_average" />&#37;&nbsp;
+    <label for="pm_below_average"><?php echo $this->__('below average.') ?></label>
+</div>
+<div class="price-rule-box">
+    <input type="radio" name="pricemotion[price_rules]" id="pm_top_enabled" value="<?php echo A4s_Pricemotion_Model_Rules::RULE_IN_TOP ?>" <?php if($rules->getStatus() == A4s_Pricemotion_Model_Rules::RULE_IN_TOP): ?>checked="checked"<?php endif; ?>/>
+    <label for="pm_top_enabled"><?php echo $this->__('The price is always in top') ?></label><br/>
+	<input type="radio" name="pricemotion[price_rules]" id="pm_top_enabled" value="<?php echo A4s_Pricemotion_Model_Rules::RULE_MATCH_TOP ?>" <?php if($rules->getStatus() == A4s_Pricemotion_Model_Rules::RULE_MATCH_TOP): ?>checked="checked"<?php endif; ?>/>
+    <label for="pm_top_enabled"><?php echo $this->__('The price is always matching number') ?></label><br/>
+    <input type="text" value="<?php echo $rules->getInTopValue() ?>" class="input-text" name="pricemotion[top]" id="pm_top" />&nbsp;
+    <label for="pm_top"><?php echo $this->__('of lowest prices.') ?></label>
+</div>
+<div class="price-rule-box">
+    <label for="pm_cost_margin_enabled"><?php echo $this->__('Enable') ?></label>
+    <input type="checkbox" name="pricemotion[cost_margin_enabled]" id="pm_cost_margin_enabled" <?php if($rules->getCostMarginStatus()): ?>checked="checked"<?php endif; ?>/>
+    <label for="pm_cost_margin"><?php echo $this->__('Minimum margin of') ?></label>
+    <input type="text" value="<?php echo $rules->getCostMarginPercent() ?>" class="input-text" name="pricemotion[cost_margin]" id="pm_cost_margin" />&#37;&nbsp;
+    <label for="pm_cost_margin"><?php echo $this->__('from the cost price.') ?></label>
+</div>
+<div class="price-rule-box">
+    <input type="checkbox" name="pricemotion[only_email]" id="pm_only_email" <?php if($rules->getOnlyEmail()): ?>checked="checked"<?php endif; ?>/>
+    <label for="pm_only_email"><?php echo $this->__("Don't change prices but still send email notification") ?></label>
+</div>

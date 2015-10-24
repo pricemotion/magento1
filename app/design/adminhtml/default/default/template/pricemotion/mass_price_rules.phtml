@@ -1,0 +1,49 @@
+<?php
+/**
+ * PriceMotion tab template
+ */
+?>
+<?php echo $this->getFormInitScripts() ?>
+<div class="content-header">
+    <?php echo $this->getHeaderHtml() ?>
+    <p class="content-buttons form-buttons"><?php echo $this->getButtonsHtml('header') ?></p>
+</div>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="pricemotion_pricerules">
+   <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+    <div class="price-rule-box">
+        <input type="radio" name="pricemotion[price_rules]" id="pm_rules_disable" checked="checked" value="<?php echo A4s_Pricemotion_Model_Rules::RULE_DISABLED ?>" />
+        <label for="pm_rules_disable"><?php echo $this->__('Disable all price rules') ?></label>
+    </div>
+    <div class="price-rule-box">
+        <input type="radio" name="pricemotion[price_rules]" id="pm_lowest_price" value="<?php echo A4s_Pricemotion_Model_Rules::LOWEST_PRICE ?>" />
+        <label for="pm_lowest_price"><?php echo $this->__('Equal to lowest price') ?></label>
+    </div>
+    <div class="price-rule-box">
+        <input type="radio" name="pricemotion[price_rules]" id="pm_below_average_enabled" value="<?php echo A4s_Pricemotion_Model_Rules::RULE_BELOW_AVERAGE ?>" />
+        <label for="pm_below_average_enabled"><?php echo $this->__('The price is always') ?></label>
+        <input type="text" class="input-text" name="pricemotion[below_average]" id="pm_below_average" />&#37;&nbsp;
+        <label for="pm_below_average"><?php echo $this->__('below average.') ?></label>
+    </div>
+    <div class="price-rule-box">
+        <input type="radio" name="pricemotion[price_rules]" id="pm_top_enabled" value="<?php echo A4s_Pricemotion_Model_Rules::RULE_IN_TOP ?>" />
+        <label for="pm_top_enabled"><?php echo $this->__('The price is always in top') ?></label>
+		<input type="radio" name="pricemotion[price_rules]" id="pm_top_enabled" value="<?php echo A4s_Pricemotion_Model_Rules::RULE_MATCH_TOP ?>" />
+        <label for="pm_top_enabled"><?php echo $this->__('The price is always matching number') ?></label>
+        <input type="text" class="input-text" name="pricemotion[top]" id="pm_top" />&nbsp;
+        <label for="pm_top"><?php echo $this->__('of lowest prices.') ?></label>
+    </div>
+    <div class="price-rule-box">
+        <label for="pm_cost_margin_enabled"><?php echo $this->__('Enable') ?></label>
+        <input type="checkbox" name="pricemotion[cost_margin_enabled]" id="pm_cost_margin_enabled"/>
+        <label for="pm_cost_margin"><?php echo $this->__('Minimum margin of') ?></label>
+        <input type="text" class="input-text" name="pricemotion[cost_margin]" id="pm_cost_margin" />&#37;&nbsp;
+        <label for="pm_cost_margin"><?php echo $this->__('from the cost price.') ?></label>
+    </div>
+    <div class="price-rule-box">
+        <input type="checkbox" name="pricemotion[only_email]" id="pm_only_email" />
+        <label for="pm_only_email"><?php echo $this->__("Don't change prices but still send email notification") ?></label>
+    </div>
+</form>
+<script type="text/javascript">
+    var editForm = new varienForm('pricemotion_pricerules', '<?php echo $this->getValidationUrl() ?>');
+</script>

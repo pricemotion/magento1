@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <A4s_Pricemotion>
+            <active>true</active>
+            <codePool>local</codePool>
+        </A4s_Pricemotion>
+    </modules>
+</config>
