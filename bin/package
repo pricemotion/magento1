@@ -10,4 +10,4 @@ version="${tag#v}"
 name="A4s_Pricemotion-$version"
 
 mkdir -p dist/
-git archive -o dist/"$name".tgz HEAD package.xml app
+git archive -o dist/"$name".tgz HEAD package.xml app skin 'set-prices.php'
