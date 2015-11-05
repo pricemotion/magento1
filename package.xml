@@ -164,7 +164,7 @@ You can also let the work be done for you. Just setup a pricerule and the prices
                 <name>Mage_Core_Modules</name>
                 <channel>community</channel>
                 <min>1.5.0</min>
-                <max>1.9.2.1</max>
+                <max>1.9.2.2</max>
             </package>
         </required>
     </dependencies>
