@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>A4s_Pricemotion</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <stability>stable</stability>
     <license>GNU GPL v3.0</license>
     <channel>community</channel>
