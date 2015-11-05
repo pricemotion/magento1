@@ -182,6 +182,19 @@ class A4s_Pricemotion_Model_Observer
                     $rule_model->setData('only_email', $only_email);
                     $rule_model->setData('status', $post_data['price_rules']);
                     $rule_model->save();
+
+                    $resource = Mage::getSingleton('core/resource');
+                    $conn = $resource->getConnection('core_write');
+                    $stmt = $conn->prepare("
+                        DELETE FROM `" . $resource->getTableName('pricemotion/rules') . "`
+                        WHERE
+                            product_id = :product_id
+                            AND rule_id <> :rule_id
+                    ");
+                    $stmt->execute(array(
+                        'product_id' => $product->getId(),
+                        'rule_id'    => $rule_model->getId(),
+                    ));
                 } elseif ($post['pricemotion']['price_rules'] == 0) {
                     $rule_model = Mage::getModel('pricemotion/rules')->load($product->getId(), 'product_id');
                     $rule_model->delete();

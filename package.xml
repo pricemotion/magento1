@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>A4s_Pricemotion</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <stability>stable</stability>
     <license>GNU GPL v3.0</license>
     <channel>community</channel>
@@ -61,7 +61,7 @@ You can also let the work be done for you. Just setup a pricerule and the prices
                             </dir>
                             <file name="Rules.php" hash="de43a9a3bf018ff3dc88289b400cd959"/>
                         </dir>
-                        <file name="Observer.php" hash="0d97115621cb6f38ce4c12dfa49c8e75"/>
+                        <file name="Observer.php" hash="0e03a78f6434f10d59d060a017e45681"/>
                         <dir name="Resource">
                             <dir name="Eav">
                                 <dir name="Mysql4">
