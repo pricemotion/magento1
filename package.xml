@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>A4s_Pricemotion</name>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <stability>stable</stability>
     <license>GNU GPL v3.0</license>
     <channel>community</channel>
@@ -148,6 +148,17 @@ You can also let the work be done for you. Just setup a pricerule and the prices
                 <dir name="template">
                     <dir name="email">
                         <file name="pricemotion.html" hash="c658c320679e50d67eb7a24239dd1d4e"/>
+                    </dir>
+                </dir>
+            </dir>
+        </target>
+        <target name="mageskin">
+            <dir name="adminhtml">
+                <dir name="default">
+                    <dir name="default">
+                        <dir name="pricemotion">
+                            <file name="pricemotion.css" hash="118e574df3f4dce6f8bcc8d750bb4b43"/>
+                        </dir>
                     </dir>
                 </dir>
             </dir>
