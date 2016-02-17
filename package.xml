@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>A4s_Pricemotion</name>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <stability>stable</stability>
     <license>GNU GPL v3.0</license>
     <channel>community</channel>
@@ -86,7 +86,7 @@ You can also let the work be done for you. Just setup a pricerule and the prices
                         </dir>
                     </dir>
                     <dir name="etc">
-                        <file name="config.xml" hash="1891b83833bfcafaba307906d099efa7"/>
+                        <file name="config.xml" hash="53cf544095424b9b54ce671c6c6d3121"/>
                         <file name="system.xml" hash="fdb0df916e543f61d61ec77b82563ca1"/>
                     </dir>
                     <dir name="sql">
