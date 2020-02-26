@@ -3,4 +3,11 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-git push git@github.com:pricemotion/magento1 master
+git push --tags git@github.com:pricemotion/magento1 master
+
+if tag="$(git describe --tags --exact-match --match='v*')" && ! hub release show "$tag" >/dev/null; then
+    dist="dist/pricemotion-${tag#v}.tgz"
+    rm -f "$dist"
+    bin/package
+    hub release create -a "$dist" -m "Pricemotion for Magento, version ${tag#v}" -o "$tag"
+fi

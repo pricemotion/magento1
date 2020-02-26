@@ -5,7 +5,7 @@ cd "$(dirname "$0")/.."
 
 tag="$(git describe --tags --match 'v*')"
 version="${tag#v}"
-name="A4s_Pricemotion-$version"
+name="pricemotion-$version"
 
 mkdir -p dist/
 output="$PWD/dist/$name.tgz"
