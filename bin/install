@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <webroot>" >&2
+    exit 1
+fi
+
+if [[ ! -d "$1/app" ]]; then
+    echo "Destination does not look like a Magento installation (no app directory found)" >&2
+    exit 1
+fi
+
+ext="$(dirname "$0")/../ext"
+rsync -rlci "$ext/app" "$ext/skin" "$1"
