@@ -12,15 +12,19 @@
             </action>
         </reference>
         <reference name="head">
-        	<action method="addCss"><stylesheet>pricemotion/pricemotion.css</stylesheet></action>
+            <action method="addCss">
+                <stylesheet>pricemotion/pricemotion.css</stylesheet>
+            </action>
         </reference>
     </adminhtml_catalog_product_edit>
-	<pricemotion_adminhtml_action_rules>
-		<reference name="head">
-        	<action method="addCss"><stylesheet>pricemotion/pricemotion.css</stylesheet></action>
+    <pricemotion_adminhtml_action_rules>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>pricemotion/pricemotion.css</stylesheet>
+            </action>
         </reference>
-		<reference name="content">
-            <block type="pricemotion/adminhtml_catalog_product_action_rules" name="pricemotion_pricerules" template="pricemotion/mass_price_rules.phtml"></block>
+        <reference name="content">
+            <block type="pricemotion/adminhtml_catalog_product_action_rules" name="pricemotion_pricerules" template="pricemotion/mass_price_rules.phtml"/>
         </reference>
-	</pricemotion_adminhtml_action_rules>
+    </pricemotion_adminhtml_action_rules>
 </layout>

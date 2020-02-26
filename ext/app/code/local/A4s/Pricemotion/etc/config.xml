@@ -6,34 +6,36 @@
         </A4s_Pricemotion>
     </modules>
     <global>
-         <blocks>
+        <blocks>
             <pricemotion>
                 <class>A4s_Pricemotion_Block</class>
             </pricemotion>
-			<adminhtml>
-				<rewrite>
-					<catalog_product_grid>A4s_Pricemotion_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
-				</rewrite>
-			</adminhtml>
-          </blocks>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product_grid>A4s_Pricemotion_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
         <models>
             <pricemotion>
                 <class>A4s_Pricemotion_Model</class>
                 <resourceModel>pricemotion_mysql4</resourceModel>
             </pricemotion>
             <pricemotion_mysql4>
-				 <class>A4s_Pricemotion_Model_Mysql4</class>
-				 <entities>
-				 	<rules>
-						<table>pricemotion_rules</table>
-					</rules>
-				 </entities>
-			</pricemotion_mysql4>
+                <class>A4s_Pricemotion_Model_Mysql4</class>
+                <entities>
+                    <rules>
+                        <table>pricemotion_rules</table>
+                    </rules>
+                </entities>
+            </pricemotion_mysql4>
         </models>
         <helpers>
-            <pricemotion><class>A4s_Pricemotion_Helper</class></pricemotion>
+            <pricemotion>
+                <class>A4s_Pricemotion_Helper</class>
+            </pricemotion>
         </helpers>
-		<resources>
+        <resources>
             <pricemotion_setup>
                 <setup>
                     <module>A4s_Pricemotion</module>
@@ -56,27 +58,27 @@
         </resources>
         <template>
             <email>
-				<pricemotion_options_emails_template translate="label" module="pricemotion">
+                <pricemotion_options_emails_template translate="label" module="pricemotion">
                     <label>Pricemotion Cron Report</label>
                     <file>pricemotion.html</file>
                     <type>html</type>
                 </pricemotion_options_emails_template>
-			</email>
-		</template>
+            </email>
+        </template>
     </global>
-	<admin>
-    	<routers>
-			<pricemotion>
+    <admin>
+        <routers>
+            <pricemotion>
                 <use>admin</use>
                 <args>
                     <module>A4s_Pricemotion</module>
                     <frontName>pricemotion</frontName>
                 </args>
-			</pricemotion>
-		</routers>
+            </pricemotion>
+        </routers>
     </admin>
     <adminhtml>
-    	<layout>
+        <layout>
             <updates>
                 <pricemotion>
                     <file>pricemotion.xml</file>
@@ -112,8 +114,8 @@
                     </pricemotion_save_rules_data>
                 </observers>
             </catalog_product_save_after>
-			<catalog_product_collection_load_before>
-            	<observers>
+            <catalog_product_collection_load_before>
+                <observers>
                     <pricemotion_add_to_product_collection>
                         <type>model</type>
                         <class>A4s_Pricemotion_Model_Observer</class>
@@ -122,7 +124,7 @@
                 </observers>
             </catalog_product_collection_load_before>
         </events>
-		<translate>
+        <translate>
             <modules>
                 <pricemotion>
                     <files>
@@ -158,17 +160,17 @@
                     <model>pricemotion/observer::updateAttributes</model>
                 </run>
             </pricemotion_update_attributes>
-          </jobs>
+        </jobs>
     </crontab>
     <default>
-    	<pricemotion_options>
-    		<default>
-    			<messages_url>http://pricemotion.nl/pm_messaging/</messages_url>
-    			<url>http://pricemotion.nl/service/</url>
-    		</default>
-    		<emails>
-				<template>pricemotion_options_emails_template</template>
-    		</emails>
-    	</pricemotion_options>
+        <pricemotion_options>
+            <default>
+                <messages_url>http://pricemotion.nl/pm_messaging/</messages_url>
+                <url>http://pricemotion.nl/service/</url>
+            </default>
+            <emails>
+                <template>pricemotion_options_emails_template</template>
+            </emails>
+        </pricemotion_options>
     </default>
 </config>
