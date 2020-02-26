@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+tag="$(git describe --tags --match 'v*')"
+version="${tag#v}"
+name="A4s_Pricemotion-$version"
+
+mkdir -p dist/
+cd ext/
+git archive -o ../dist/"$name".tgz HEAD package.xml app skin set-prices.php
+
+echo "$name.tgz"
