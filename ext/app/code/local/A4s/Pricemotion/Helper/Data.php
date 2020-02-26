@@ -137,7 +137,7 @@ class A4s_Pricemotion_Helper_Data extends Mage_Core_Helper_Abstract {
      * Get the attribute in which the company names that are to be escaped is saved
      * @return string
      */
-    public function getEscNames() {
+    private function getEscNames() {
         return Mage::getStoreConfig('pricemotion_options/default/escape_names');
     }
 
@@ -191,25 +191,26 @@ class A4s_Pricemotion_Helper_Data extends Mage_Core_Helper_Abstract {
                 $lowest = $price;
             }
             $average += $price;
+            if($this->getEscNames()) {
+                $escs_array = explode(',', $this->getEscNames());
+                $escs_array = array_map([$this, 'normalizeSeller'], $escs_array);
+                if(in_array($this->normalizeSeller($price_item->seller), $escs_array)){
+                    continue;
+                }
+            }
             if($with_currency_symbol) {
                 $return['prices'][] = array(
-                            'seller' => (string)$price_item->seller,
-                            'price' => Mage::helper('core')->currency($price, true, false),
-                            'cleanPrice' => number_format($price, 2, ".", "")
-                        );
+                    'seller' => (string)$price_item->seller,
+                    'price' => Mage::helper('core')->currency($price, true, false),
+                    'cleanPrice' => number_format($price, 2, ".", "")
+                );
             } elseif($with_seller) {
                 $return['prices'][] = array(
-                            'seller' => (string)$price_item->seller,
-                            'price' => number_format($price, 2, ".", ""),
-                            'cleanPrice'=> number_format($price, 2, ".", "")
-                        );
+                    'seller' => (string)$price_item->seller,
+                    'price' => number_format($price, 2, ".", ""),
+                    'cleanPrice'=> number_format($price, 2, ".", "")
+                );
             } else {
-                            if($this->getEscNames()) {
-                                $escs_array = array() + explode(',',$this->getEscNames());
-                                if(in_array($price_item->seller, $escs_array)){
-                                    continue;
-                                }
-                            }
                 $return['prices'][] = number_format($price, 2, ".", "");
             }
         }
@@ -309,6 +310,12 @@ class A4s_Pricemotion_Helper_Data extends Mage_Core_Helper_Abstract {
             'success' => false,
             'message' => $message,
         ];
+    }
+
+    private function normalizeSeller($seller) {
+        $seller = strtolower($seller);
+        $seller = preg_replace('/\s*/', '', $seller);
+        return $seller;
     }
 
 }
