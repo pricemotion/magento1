@@ -8,7 +8,20 @@ version="${tag#v}"
 name="A4s_Pricemotion-$version"
 
 mkdir -p dist/
-cd ext/
-git archive -o ../dist/"$name".tgz HEAD package.xml app skin set-prices.php
+output="$PWD/dist/$name.tgz"
 
-echo "$name.tgz"
+tmp="$(mktemp -d)"
+cleanup() { rm -rf "$tmp"; }
+trap cleanup EXIT
+
+cd ext
+git archive HEAD package.xml app skin set-prices.php | tar x -C "$tmp"
+
+cd "$tmp"
+find -type f -exec perl -p -i -e 's/\${VERSION}/'"$version"'/g' {} +
+
+tar czf "$output" *
+
+ln -sfn "${output##*/}" "${output%/*}/latest.tgz"
+
+echo "${output##*/}"
