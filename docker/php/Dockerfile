@@ -1,14 +1,11 @@
-FROM php:5.4.32-apache
+FROM debian:jessie
 
-RUN apt-get update && \
-    apt-get install -y --force-yes debian-keyring debian-archive-keyring && \
-    apt-get update
+RUN apt-get update && apt-get dist-upgrade -y
 
-RUN apt-get install -y \
-    libmysqlclient-dev
+RUN apt-get install -y apache2-mpm-prefork nvi wget build-essential
 
-RUN CFLAGS=-I/usr/include/mysql pecl install PDO_MYSQL && \
-    echo 'extension=pdo_mysql.so' >> /usr/local/lib/php.ini
+RUN wget -O- https://www.php.net/distributions/php-5.4.45.tar.bz2 | tar xj -C /usr/local/src
 
-RUN apt-get install -y \
-    procps
+RUN mkdir /var/run/apache2 /var/lock/apache2
+
+CMD [ "bash", "-c", "usermod -u `stat -c %u /var/www/html` www-data && . /etc/apache2/envvars && apache2 -D FOREGROUND" ]
