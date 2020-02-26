@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <version>" >&2
+    exit 1
+fi
+
+tar cJf pkgs/magento-$1.txz www/$1
+mysqldump --skip-column-statistics --single-transaction pricemotion_magento$1 | xz > pkgs/magento-$1.sql.xz
