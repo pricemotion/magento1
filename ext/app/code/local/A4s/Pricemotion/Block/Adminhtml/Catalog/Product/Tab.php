@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion product tab block
+ * Pricemotion product tab block
  *
  * @package		Pricemotion
  * @copyright	Aim4Solutions s.r.l.
@@ -111,7 +111,7 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface {
      */
     public function getTabLabel()
     {
-        return $this->__('PriceMotion Prices');
+        return $this->__('Pricemotion Prices');
     }
  
     /**
@@ -121,7 +121,7 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface {
      */
     public function getTabTitle()
     {
-        return $this->__('PriceMotion Prices');
+        return $this->__('Pricemotion Prices');
     }
  
     /**

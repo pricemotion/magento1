@@ -2,7 +2,7 @@
 
 
 /**
- * PriceMotion mysql installer
+ * Pricemotion mysql installer
  *
  * @package		Pricemotion
  * @copyright	Aim4Solutions s.r.l.

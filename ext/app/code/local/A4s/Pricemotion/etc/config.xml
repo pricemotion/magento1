@@ -57,7 +57,7 @@
         <template>
             <email>
 				<pricemotion_options_emails_template translate="label" module="pricemotion">
-                    <label>PriceMotion Cron Report</label>
+                    <label>Pricemotion Cron Report</label>
                     <file>pricemotion.html</file>
                     <type>html</type>
                 </pricemotion_options_emails_template>

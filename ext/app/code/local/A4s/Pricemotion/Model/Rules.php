@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion Rules model
+ * Pricemotion Rules model
  *
  * @package        Pricemotion
  * @copyright    Aim4Solutions s.r.l.

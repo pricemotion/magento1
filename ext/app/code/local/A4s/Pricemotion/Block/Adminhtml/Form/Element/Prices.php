@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion element renderer to display prices
+ * Pricemotion element renderer to display prices
  *
  * @package		Pricemotion
  * @copyright	Aim4Solutions s.r.l.

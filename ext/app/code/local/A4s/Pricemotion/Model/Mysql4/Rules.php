@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion Price rules mysql4
+ * Pricemotion Price rules mysql4
  *
  * @package        Pricemotion
  * @copyright    Aim4Solutions s.r.l.

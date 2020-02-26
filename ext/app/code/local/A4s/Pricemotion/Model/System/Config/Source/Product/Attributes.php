@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion System config source model to get product attributes
+ * Pricemotion System config source model to get product attributes
  *
  * @package        Pricemotion
  * @copyright    Aim4Solutions s.r.l.

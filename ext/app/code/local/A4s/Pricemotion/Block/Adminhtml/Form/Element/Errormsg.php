@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion element renderer to display errors
+ * Pricemotion element renderer to display errors
  *
  * @package		Pricemotion
  * @copyright	Aim4Solutions s.r.l.

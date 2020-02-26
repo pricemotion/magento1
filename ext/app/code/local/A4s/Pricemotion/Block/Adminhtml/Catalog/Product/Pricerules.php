@@ -38,7 +38,7 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface {
      */
     public function getTabLabel()
     {
-        return $this->__('PriceMotion Price Rules');
+        return $this->__('Pricemotion Price Rules');
     }
  
     /**
@@ -48,7 +48,7 @@ implements Mage_Adminhtml_Block_Widget_Tab_Interface {
      */
     public function getTabTitle()
     {
-        return $this->__('PriceMotion Price Rules');
+        return $this->__('Pricemotion Price Rules');
     }
  
     /**

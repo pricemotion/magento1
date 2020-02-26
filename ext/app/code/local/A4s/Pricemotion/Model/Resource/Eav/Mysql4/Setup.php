@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion Price attributes
+ * Pricemotion Price attributes
  *
  * @package        Pricemotion
  * @copyright    Aim4Solutions s.r.l.

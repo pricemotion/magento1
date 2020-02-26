@@ -11,7 +11,7 @@ class A4s_Pricemotion_Adminhtml_ActionController extends Mage_Adminhtml_Controll
             return;
         }
         
-        $this->_title($this->__('PriceMotion'))
+        $this->_title($this->__('Pricemotion'))
              ->_title($this->__('Mass Update PriceRules'));
         $this->loadLayout()->renderLayout();
     }

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion Observer
+ * Pricemotion Observer
  *
  * @package        Pricemotion
  * @copyright    Aim4Solutions s.r.l.
@@ -35,7 +35,7 @@ class A4s_Pricemotion_Model_Observer
             $feedData = array();
             foreach ($messages_xml->message as $message) {
                 $feedData[] = array(
-                    "title" => "PriceMotion - " . $message->title,
+                    "title" => "Pricemotion - " . $message->title,
                     "description" => $message->safe_body,
                     "severity" => 4,
                     "date_added" => date("Y-m-d H:i:s")

@@ -2,7 +2,7 @@
 
 
 /**
- * PriceMotion mysql installer
+ * Pricemotion mysql installer
  *
  * @package		Pricemotion
  * @copyright	Aim4Solutions s.r.l.
@@ -19,7 +19,7 @@ $installer->addAttribute(Mage_Catalog_Model_Product::ENTITY, 'enable_pricemotion
     'type'              => 'int',
     'backend'           => '',
     'frontend'          => '',
-    'label'             => 'Show PriceMotion Prices',
+    'label'             => 'Show Pricemotion Prices',
     'input'             => 'select',
     'class'             => '',
     'source'            => 'eav/entity_attribute_source_boolean',

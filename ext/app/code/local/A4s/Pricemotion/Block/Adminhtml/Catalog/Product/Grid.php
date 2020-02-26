@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PriceMotion products grid
+ * Pricemotion products grid
  *
  * @package		Pricemotion
  * @copyright	Aim4Solutions s.r.l.
@@ -39,7 +39,7 @@ class A4s_Pricemotion_Block_Adminhtml_Catalog_Product_Grid extends Mage_Adminhtm
 
         $this->addColumnAfter('enable_pricemotion',
             array(
-                'header'=> Mage::helper('pricemotion')->__('Show PriceMotion Prices'),
+                'header'=> Mage::helper('pricemotion')->__('Show Pricemotion Prices'),
                 'width' => '70px',
                 'index' => 'enable_pricemotion',
                 'type'  => 'options',
@@ -51,14 +51,14 @@ class A4s_Pricemotion_Block_Adminhtml_Catalog_Product_Grid extends Mage_Adminhtm
      }
 	 
 	/**
-     * Prepare grid massaction actions. Add 'Update PriceMotion Price Rules' action
+     * Prepare grid massaction actions. Add 'Update Pricemotion Price Rules' action
 	 *
      * @return A4s_Pricemotion_Block_Adminhtml_Catalog_Product_Grid
      */
 	protected function _prepareMassaction() {
         parent::_prepareMassaction();
         $this->getMassactionBlock()->addItem('pm_pricerules', array(
-		'label' => Mage::helper('pricemotion')->__('Update PriceMotion Price Rules'),
+		'label' => Mage::helper('pricemotion')->__('Update Pricemotion Price Rules'),
 		'url'   => $this->getUrl('pricemotion/adminhtml_action/rules', array('_current'=>true))
 		));
         return $this;
