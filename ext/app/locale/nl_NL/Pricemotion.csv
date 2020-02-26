@@ -52,3 +52,4 @@
 "Cron Reports","E-mail overzicht prijswijzigingen"
 "List the company names (seperated by a comma ',') as displayed in the Pricemotion tab on the 'Edit Product' page, that you do not want to include in the execution of your price rules.","Vermeld de namen van de bedrijven gescheiden door de comma welke u wilt uitsluiten van de prijsregels. Bijvoorbeeld om eigen prijzen of prijzen van specifieke concurrenten te negeren."
 "Send emails with reports after cron is finished.","Verstuur een e-mail met een overzicht van prijswijzigingen nadat deze periodiek is bijgewerkt."
+"Please configure your Pricemotion API key (serial)","Stel alstublieft uw Pricemotion API-sleutel (serial) in"
