@@ -168,7 +168,7 @@ You can also let the work be done for you. Just setup a pricerule and the prices
     <dependencies>
         <required>
             <php>
-                <min>5.6.20</min>
+                <min>5.6.0</min>
                 <max>7.4.999</max>
             </php>
             <package>
