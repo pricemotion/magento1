@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+find ext -type f -exec grep -Poh '\b__\((["'\''])\K(.+?)(?=\1)' {} + |
+    sort -u |
+    awk '{print "\""$0"\",\""$0"\""}' > ext/app/locale/en_US/Pricemotion.csv
+
+awk 'FNR==NR{msgs[$1]=1;print $0} {if(!msgs[$1])print $0}' FPAT='"([^"]|"")*"' \
+    ext/app/locale/nl_NL/Pricemotion.csv ext/app/locale/en_US/Pricemotion.csv |
+sponge ext/app/locale/nl_NL/Pricemotion.csv
