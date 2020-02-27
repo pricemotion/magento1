@@ -5,7 +5,6 @@ services:
         build: docker/php
         volumes:
             - ./www/1944:/var/www/html
-            - ./docker/httpd.conf:/etc/apache2/httpd.conf
         links:
             - mysql
         networks:
